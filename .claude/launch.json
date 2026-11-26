@@ -1,0 +1,30 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "backend",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "server", "run", "dev"],
+      "port": 5000
+    },
+    {
+      "name": "frontend",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev"],
+      "port": 5173
+    },
+    {
+      "name": "backend-seed",
+      "runtimeExecutable": "cmd",
+      "runtimeArgs": ["/c", "set PORT=5001&& set DB_STORAGE=C:\\Users\\carva\\AppData\\Local\\Temp\\claude\\89ae2618de8dbc8d\\73f891ad-79dd-4e28-abdd-d2536a70e399\\scratchpad\\preview.sqlite&& node server\\server.js"],
+      "port": 5001,
+      "autoPort": false
+    },
+    {
+      "name": "frontend-seed",
+      "runtimeExecutable": "cmd",
+      "runtimeArgs": ["/c", "set VITE_API_URL=http://localhost:5001/api&& npx vite --port 5175 --strictPort"],
+      "port": 5175
+    }
+  ]
+}

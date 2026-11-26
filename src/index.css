@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Contrapunto · Estudio Musical
+   Ink #1C1A19, cream #F6F1E7, paper beige #EBE4D6 and the terracotta dot #B6452E */
+@layer base {
+  :root {
+    --background: 40 40% 94%; /* cream paper */
+    --foreground: 20 6% 10%; /* ink */
+    --card: 40 50% 98%;
+    --card-foreground: 20 6% 10%;
+    --popover: 40 50% 98%;
+    --popover-foreground: 20 6% 10%;
+    --primary: 20 6% 10%;
+    --primary-foreground: 40 45% 95%;
+    --secondary: 40 32% 88%;
+    --secondary-foreground: 20 6% 12%;
+    --muted: 40 30% 90%;
+    --muted-foreground: 30 7% 38%;
+    --accent: 40 32% 88%;
+    --accent-foreground: 20 6% 10%;
+    --destructive: 6 58% 44%;
+    --destructive-foreground: 40 45% 96%;
+    --border: 38 22% 82%;
+    --input: 38 20% 76%;
+    --ring: 10 60% 45%;
+    --brand: 10 60% 45%; /* terracotta dot */
+    --brand-foreground: 40 45% 96%;
+    --sidebar: 20 6% 10%;
+    --sidebar-foreground: 40 45% 94%;
+    --sidebar-muted: 35 10% 62%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 20 6% 9%;
+    --foreground: 40 40% 93%;
+    --card: 20 5% 12%;
+    --card-foreground: 40 40% 93%;
+    --popover: 20 5% 12%;
+    --popover-foreground: 40 40% 93%;
+    --primary: 40 45% 94%;
+    --primary-foreground: 20 6% 10%;
+    --secondary: 20 5% 18%;
+    --secondary-foreground: 40 40% 93%;
+    --muted: 20 5% 18%;
+    --muted-foreground: 35 10% 62%;
+    --accent: 20 5% 18%;
+    --accent-foreground: 40 40% 93%;
+    --destructive: 6 55% 50%;
+    --destructive-foreground: 40 45% 96%;
+    --border: 20 5% 22%;
+    --input: 20 5% 26%;
+    --ring: 13 68% 62%;
+    --brand: 13 68% 62%;
+    --brand-foreground: 20 6% 10%;
+    --sidebar: 20 6% 7%;
+    --sidebar-foreground: 40 45% 94%;
+    --sidebar-muted: 35 10% 62%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+  h1, h2, h3 {
+    @apply tracking-tight;
+  }
+  ::selection {
+    background: hsl(var(--brand) / 0.25);
+  }
+}
+
+@layer components {
+  /* Five faint staff lines, the backdrop of the logo */
+  .staff-lines {
+    background-image: repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent 27px,
+      currentColor 27px,
+      currentColor 28px
+    );
+  }
+}
